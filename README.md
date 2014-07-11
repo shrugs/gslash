@@ -18,3 +18,8 @@ Chrome extension that adds a global shortcut for focusing search boxes on arbitr
 6. ???
 7. Profit!
 8. Test it out on [DuckDuckGo](https://duckduckgo.com/?q=test) or your favorite website!
+
+## Notes
+
+Doesn't currently work on websites that think they're too good for html inputs.
+*cough* Facebook *cough*. Luckily, those are the same types of websites that implement the standard '/' shortcut to autofocus their own search boxes.
