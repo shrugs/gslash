@@ -1,5 +1,7 @@
 # gslash
 
+![gslash](https://raw.githubusercontent.com/Shrugs/gslash/master/app/images/icon-128.png)
+
 Chrome extension that adds a global shortcut for focusing search boxes on arbitrary pages.
 
 ## Usage
