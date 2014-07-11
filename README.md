@@ -16,5 +16,3 @@ Chrome extension that adds a global shortcut for focusing search boxes on arbitr
 6. ???
 7. Profit!
 8. Test it out on [DuckDuckGo](https://duckduckgo.com/?q=test) or your favorite website!
-
-
