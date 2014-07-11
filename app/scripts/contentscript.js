@@ -1,21 +1,38 @@
 'use strict';
 
-$(document).on('keypress', function(e) {
-    if (e.keycode === 191) {
-        // is slash
+var selectors = [
+    '.s',
+    '.search',
+    '[name*="search"]',
+    '[name*="query"]',
+    '[name^="q"]',
+    '[name^="s"]'
+];
+
+var isVisible = function() {
+    var t = $(this);
+    return (t.is(':visible')) && (t.width() > 0) && (t.height() > 10);
+};
+
+$(document).on('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.keyCode === 191) {
         // first, find any search boxes type="search"
-        var searchInputs = $('input[type="search"]').filter(function() {
-            return $(this).width() > 0;
-        });
+        var searchInputs = $('input[type="search"]').filter(isVisible);
         if (searchInputs.length) {
             searchInputs[0].focus();
         }
-        // other good heuristics
-        // .search, input[type="text"]
-        // name=q, input[type="text"]
-        // name=query, input[type="text"]
-        // name=search, input[type="text"]
-        // name=s, input[type="text"]
 
+        var textInputs = $('input[type="text"]');
+        textInputs = textInputs.add(textInputs.clone().filter(selectors.join(', '))).filter(isVisible);
+        if (textInputs.length) {
+            textInputs = textInputs.sort(function(a,b) {
+                return $(a).offset().top > $(b).offset().top;
+            });
+
+            textInputs[0].focus();
+        }
     }
 });
+
+
+console.log('LOADED');
