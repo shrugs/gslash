@@ -33,6 +33,3 @@ $(document).on('keydown', function(e) {
         }
     }
 });
-
-
-console.log('LOADED');
